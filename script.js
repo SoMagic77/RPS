@@ -1,49 +1,61 @@
 function getComputerChoice(){
     let random = Math.floor(Math.random() * 3)
-    if(random == 0){rSelection
-        aiAns = "Rock"
+    if(random == 0){
+        aiAns = "rock"
     }
     else if(random == 1){
-        aiAns = "Paper"
+        aiAns = "paper"
     }
     else if(random == 2){
-        aiAns = "Scissors"
+        aiAns = "scissors"
     }
     else{
         aiAns = "UhOh"
     }
     return aiAns
 }
-getComputerChoice()
-let answer = prompt("Rock, Paper, or Scissors?")
-let playerSelection = answer.toLowerCase()
-let computerSelection = aiAns.toLowerCase()
-console.log(playerSelection)
-console.log(computerSelection)
+let playerScore = 0
+let computerScore = 0
 function round(computerSelection,playerSelection){
-    if(computerSelection === playerSelection){
+    if(computerSelection == playerSelection){
         return "Tie!"
     }
-    else if(computerSelection === "rock" && playerSelection === "scissors"){
+    else if(computerSelection == "rock" && playerSelection == "scissors"){
+        computerScore++
         return "You Lost! Rock beats Scissors!"
     }
-    else if(computerSelection === "paper" && playerSelection === "rock"){
+    else if(computerSelection == "paper" && playerSelection == "rock"){
+        computerScore++
         return "You Lost! Paper beats Rock!"
     }
-    else if(computerSelection === "scissors" && playerSelection === "paper"){
+    else if(computerSelection == "scissors" && playerSelection == "paper"){
+        computerScore++
         return "You Lost! Scissors beats Paper!"
     }
-    else if(computerSelection === "rock" && playerSelection === "paper"){
+    else if(computerSelection == "rock" && playerSelection == "paper"){
+        playerScore++
         return "You Won! Paper beats Rock!"
     }
-    else if(computerSelection === "paper" && playerSelection === "Scissors"){
+    else if(computerSelection == "paper" && playerSelection == "Scissors"){
+        playerScore++
         return "You Won! Scissors beats Paper!"
     }
-    else if(computerSelection === "scissors" && playerSelection === "rock"){
+    else if(computerSelection == "scissors" && playerSelection == "rock"){
+        playerScore++
         return "You Won! Rock beats Scissors!"
     }
 }
 
-console.log(round())
+function game(){
+    for(let i = 0; i< 5; i++){
+        let answer = prompt("Rock, Paper, or Scissors?")
+        getComputerChoice()
+        let playerSelection = answer.toLowerCase()
+        let computerSelection = aiAns.toLowerCase()
+        console.log(round(computerSelection, playerSelection))
+        console.log("player " + playerScore + " and computer " + computerScore)
 
+    }
+}
+game()
 
