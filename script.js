@@ -45,17 +45,13 @@ function round(computerSelection,playerSelection){
         return "You Won! Rock beats Scissors!"
     }
 }
-
 function game(){
-    for(let i = 0; i< 5; i++){
         let answer = prompt("Rock, Paper, or Scissors?")
         getComputerChoice()
         let playerSelection = answer.toLowerCase()
         let computerSelection = aiAns.toLowerCase()
         console.log(round(computerSelection, playerSelection))
         console.log("player " + playerScore + " and computer " + computerScore)
-
-    }
 }
-game()
+
 
