@@ -4,3 +4,24 @@
     font-size: 64px;
     border-radius: 24px;
 }
+
+.flex {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.scoreNums {
+    display: flex;
+    flex-direction: row;
+}
+.scoreNums div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid red;
+}
